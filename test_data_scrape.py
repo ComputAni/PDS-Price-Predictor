@@ -29,6 +29,7 @@ for i in range(num_chunks):
     results = client.get("uacg-pexx", limit=50000, offset=curr_offset)
     total_data += results
 
+
 # Convert to pandas DataFrame
 results_df = pd.DataFrame.from_records(total_data)
 print("Before scrubbing data size: ", len(results_df))
@@ -38,6 +39,7 @@ results_df = results_df[results_df.dropoff_latitude != '0']
 results_df = results_df[results_df.dropoff_longitude != '0']
 print("After scrubbing data size: ", len(results_df))
 
+"""
 dlen = len(results_df)
 results_p1 = results_df.iloc[: dlen // 2]
 results_p2 = results_df.iloc[dlen // 2:]
@@ -47,5 +49,8 @@ print(len(results_p1), len(results_p2))
 #Write to csv file
 results_p1.to_csv('cab_data_p1.csv')
 results_p2.to_csv('cab_data_p2.csv')
+"""
+results_df.to_csv('cab_data.csv')
+
 
 print("Finished writing to file!")
