@@ -89,9 +89,9 @@ def init_weather_features(start_date, end_date):
 # In[ ]:
 
 
-start_date = datetime.datetime(2016, 1, 1)
-end_date = datetime.datetime(2016, 12, 31)
-date_features = init_weather_features(start_date, end_date)
+#start_date = datetime.datetime(2016, 1, 1)
+#end_date = datetime.datetime(2016, 12, 31)
+#date_features = init_weather_features(start_date, end_date)
 
 
 # In[13]:
@@ -121,12 +121,12 @@ def create_weather_features(df, date_to_features):
         df[feature_name] = weather_features[feature_name]
     return df
 
-cab_data = create_weather_features(cab_data, date_features)
+#cab_data = create_weather_features(cab_data, date_features)
 
 
 # In[90]:
 
 
 # Inspect our newly created weather features
-print(cab_data.iloc[0])
+#print(cab_data.iloc[0])
 
