@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[9]:
+# In[1]:
 
 
 import pandas as pd
@@ -12,13 +12,13 @@ from unicodedata import normalize
 import re
 
 
-# In[10]:
+# In[3]:
 
 
-cab_data = pd.read_csv("cab_data_p2.csv")
+#cab_data = pd.read_csv("cab_data_p2.csv")
 
 
-# In[11]:
+# In[2]:
 
 
 # Get weather data for 2016 and returns dictionary of date features
@@ -86,15 +86,15 @@ def init_weather_features(start_date, end_date):
 
 
 
-# In[ ]:
+# In[5]:
 
 
-#start_date = datetime.datetime(2016, 1, 1)
-#end_date = datetime.datetime(2016, 12, 31)
+#start_date = datetime.datetime(2018, 5, 5)
+#end_date = datetime.datetime(2018, 5, 5)
 #date_features = init_weather_features(start_date, end_date)
 
 
-# In[13]:
+# In[3]:
 
 
 # insert method for dictionary (list of values for each key)
@@ -107,7 +107,7 @@ def dict_insert(d, key, val):
 # put the weather-related features into the dataframe
 def create_weather_features(df, date_to_features):
     
-    dt_format = '%Y-%m-%dT%H:%M:%S.000'
+    dt_format = '%Y-%m-%dT%H:%M:%S.%f'
     weather_features = dict()
     for time in df["tpep_dropoff_datetime"]:
         # Extract the datetime object from the timestamp

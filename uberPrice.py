@@ -9,7 +9,7 @@ import time
 # Gets the current price given the start and end locations.
 def getPriceNow(startLat, startLong, endLat, endLong):
 	# Left out the server token as the repo is public.
-	session = Session(server_token="......................")
+	session = Session(server_token="O9eeQrKgZipE7mI9f_Btc4_ZR28QaS0p4jU3S0M-")
 	client = UberRidesClient(session)
 
 	response = client.get_price_estimates(
@@ -24,7 +24,7 @@ def getPriceNow(startLat, startLong, endLat, endLong):
 
 	return estimate
 
-
+"""
 # Example test for 2 minutes
 # Union Square, San Francisco coordinates
 startCoord = (37.787994,-122.407437)
@@ -44,6 +44,5 @@ for i in range(2):
 	# 'high_estimate', 'low_estimate' are in $, 'duration' is in seconds.
 	estimate = getPriceNow(startCoord[0], startCoord[1], endCoord[0], endCoord[1])
 	print(estimate)
-
-
+"""
 

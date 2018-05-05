@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[9]:
+# In[5]:
 
 
 import pandas as pd
@@ -9,7 +9,7 @@ from datetime import datetime
 from pandas.tseries.holiday import USFederalHolidayCalendar
 
 
-# In[2]:
+# In[6]:
 
 
 #cab_data = pd.read_csv("cab_data_p2.csv")
@@ -33,11 +33,11 @@ from pandas.tseries.holiday import USFederalHolidayCalendar
 #assert(dt not in us_holidays)
 
 
-# In[10]:
+# In[9]:
 
 
 def create_date_features(df, start_date, end_date):
-    dt_format = '%Y-%m-%dT%H:%M:%S.000'
+    dt_format = '%Y-%m-%dT%H:%M:%S.%f'
     # Get the list of US federal hollidays
     cal = USFederalHolidayCalendar()
     us_holidays = cal.holidays(start=start_date, end=end_date).to_pydatetime()
@@ -83,9 +83,9 @@ def create_date_features(df, start_date, end_date):
     
     df["duration"] = durations
     return df
-start = '2016-01-01'
-end = '2016-12-31'
-cab_data = create_date_features(cab_data, start, end)
+#start = '2016-01-01'
+#end = '2016-12-31'
+#cab_data = create_date_features(cab_data, start, end)
 
 
 # In[6]:
